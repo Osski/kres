@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kresModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ogrenci">
+    <Key>
+      <PropertyRef Name="ogrenciID" />
+    </Key>
+    <Property Name="ogrenciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="cinsiyet" Type="Boolean" />
+    <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
+    <Property Name="tcno" Type="Int32" />
+    <Property Name="ogrencino" Type="Int32" />
+    <NavigationProperty Name="ogrencisinif" Relationship="Self.FK_ogrencisinif_ogrenci" FromRole="ogrenci" ToRole="ogrencisinif" />
+    <NavigationProperty Name="ogrenciveli" Relationship="Self.FK_ogrenciveli_ogrenci" FromRole="ogrenci" ToRole="ogrenciveli" />
+  </EntityType>
+  <EntityType Name="ogrencisinif">
+    <Key>
+      <PropertyRef Name="ogrencisinifID" />
+    </Key>
+    <Property Name="ogrencisinifID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenciID" Type="Int32" />
+    <Property Name="sinifID" Type="Int32" />
+    <NavigationProperty Name="ogrenci" Relationship="Self.FK_ogrencisinif_ogrenci" FromRole="ogrencisinif" ToRole="ogrenci" />
+    <NavigationProperty Name="siniflar" Relationship="Self.FK_ogrencisinif_siniflar" FromRole="ogrencisinif" ToRole="siniflar" />
+  </EntityType>
+  <EntityType Name="ogrenciveli">
+    <Key>
+      <PropertyRef Name="ogrenciveliID" />
+    </Key>
+    <Property Name="ogrenciveliID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenciID" Type="Int32" />
+    <Property Name="veliID" Type="Int32" />
+    <NavigationProperty Name="ogrenci" Relationship="Self.FK_ogrenciveli_ogrenci" FromRole="ogrenciveli" ToRole="ogrenci" />
+    <NavigationProperty Name="veli" Relationship="Self.FK_ogrenciveli_veli" FromRole="ogrenciveli" ToRole="veli" />
+  </EntityType>
+  <EntityType Name="ogretmen">
+    <Key>
+      <PropertyRef Name="ogretmenID" />
+    </Key>
+    <Property Name="ogretmenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tcno" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="maas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cinsiyet" Type="Boolean" />
+    <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="sinifogretmen" Relationship="Self.FK_sinifogretmen_ogretmen" FromRole="ogretmen" ToRole="sinifogretmen" />
+  </EntityType>
+  <EntityType Name="siniflar">
+    <Key>
+      <PropertyRef Name="sinifID" />
+    </Key>
+    <Property Name="sinifID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sinifadi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="ogrencisinif" Relationship="Self.FK_ogrencisinif_siniflar" FromRole="siniflar" ToRole="ogrencisinif" />
+    <NavigationProperty Name="sinifogretmen" Relationship="Self.FK_sinifogretmen_siniflar" FromRole="siniflar" ToRole="sinifogretmen" />
+  </EntityType>
+  <EntityType Name="sinifogretmen">
+    <Key>
+      <PropertyRef Name="sinifogretmenID" />
+    </Key>
+    <Property Name="sinifogretmenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sinifID" Type="Int32" />
+    <Property Name="ogretmenID" Type="Int32" />
+    <NavigationProperty Name="ogretmen" Relationship="Self.FK_sinifogretmen_ogretmen" FromRole="sinifogretmen" ToRole="ogretmen" />
+    <NavigationProperty Name="siniflar" Relationship="Self.FK_sinifogretmen_siniflar" FromRole="sinifogretmen" ToRole="siniflar" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="veli">
+    <Key>
+      <PropertyRef Name="veliID" />
+    </Key>
+    <Property Name="veliID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tcno" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cinsiyet" Type="Boolean" />
+    <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ogrenciveli" Relationship="Self.FK_ogrenciveli_veli" FromRole="veli" ToRole="ogrenciveli" />
+  </EntityType>
+  <Association Name="FK_ogrencisinif_ogrenci">
+    <End Role="ogrenci" Type="Self.ogrenci" Multiplicity="0..1" />
+    <End Role="ogrencisinif" Type="Self.ogrencisinif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ogrenci">
+        <PropertyRef Name="ogrenciID" />
+      </Principal>
+      <Dependent Role="ogrencisinif">
+        <PropertyRef Name="ogrenciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ogrenciveli_ogrenci">
+    <End Role="ogrenci" Type="Self.ogrenci" Multiplicity="0..1" />
+    <End Role="ogrenciveli" Type="Self.ogrenciveli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ogrenci">
+        <PropertyRef Name="ogrenciID" />
+      </Principal>
+      <Dependent Role="ogrenciveli">
+        <PropertyRef Name="ogrenciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ogrencisinif_siniflar">
+    <End Role="siniflar" Type="Self.siniflar" Multiplicity="0..1" />
+    <End Role="ogrencisinif" Type="Self.ogrencisinif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="siniflar">
+        <PropertyRef Name="sinifID" />
+      </Principal>
+      <Dependent Role="ogrencisinif">
+        <PropertyRef Name="sinifID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ogrenciveli_veli">
+    <End Role="veli" Type="Self.veli" Multiplicity="0..1" />
+    <End Role="ogrenciveli" Type="Self.ogrenciveli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="veli">
+        <PropertyRef Name="veliID" />
+      </Principal>
+      <Dependent Role="ogrenciveli">
+        <PropertyRef Name="veliID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sinifogretmen_ogretmen">
+    <End Role="ogretmen" Type="Self.ogretmen" Multiplicity="0..1" />
+    <End Role="sinifogretmen" Type="Self.sinifogretmen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ogretmen">
+        <PropertyRef Name="ogretmenID" />
+      </Principal>
+      <Dependent Role="sinifogretmen">
+        <PropertyRef Name="ogretmenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sinifogretmen_siniflar">
+    <End Role="siniflar" Type="Self.siniflar" Multiplicity="0..1" />
+    <End Role="sinifogretmen" Type="Self.sinifogretmen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="siniflar">
+        <PropertyRef Name="sinifID" />
+      </Principal>
+      <Dependent Role="sinifogretmen">
+        <PropertyRef Name="sinifID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="kresEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ogrenci" EntityType="Self.ogrenci" />
+    <EntitySet Name="ogrencisinif" EntityType="Self.ogrencisinif" />
+    <EntitySet Name="ogrenciveli" EntityType="Self.ogrenciveli" />
+    <EntitySet Name="ogretmen" EntityType="Self.ogretmen" />
+    <EntitySet Name="siniflar" EntityType="Self.siniflar" />
+    <EntitySet Name="sinifogretmen" EntityType="Self.sinifogretmen" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="veli" EntityType="Self.veli" />
+    <AssociationSet Name="FK_ogrencisinif_ogrenci" Association="Self.FK_ogrencisinif_ogrenci">
+      <End Role="ogrenci" EntitySet="ogrenci" />
+      <End Role="ogrencisinif" EntitySet="ogrencisinif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ogrenciveli_ogrenci" Association="Self.FK_ogrenciveli_ogrenci">
+      <End Role="ogrenci" EntitySet="ogrenci" />
+      <End Role="ogrenciveli" EntitySet="ogrenciveli" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ogrencisinif_siniflar" Association="Self.FK_ogrencisinif_siniflar">
+      <End Role="siniflar" EntitySet="siniflar" />
+      <End Role="ogrencisinif" EntitySet="ogrencisinif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ogrenciveli_veli" Association="Self.FK_ogrenciveli_veli">
+      <End Role="veli" EntitySet="veli" />
+      <End Role="ogrenciveli" EntitySet="ogrenciveli" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sinifogretmen_ogretmen" Association="Self.FK_sinifogretmen_ogretmen">
+      <End Role="ogretmen" EntitySet="ogretmen" />
+      <End Role="sinifogretmen" EntitySet="sinifogretmen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sinifogretmen_siniflar" Association="Self.FK_sinifogretmen_siniflar">
+      <End Role="siniflar" EntitySet="siniflar" />
+      <End Role="sinifogretmen" EntitySet="sinifogretmen" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
