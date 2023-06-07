@@ -24,5 +24,11 @@ namespace kres.Pages
             var ogrenciislemleri= new Pages.OgrenciIslemleri();
             ogrenciislemleri.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var ogretmenislemleri = new Pages.OgretmenIslemleri();
+            ogretmenislemleri.Show();
+        }
     }
 }
