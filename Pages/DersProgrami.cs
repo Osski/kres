@@ -30,6 +30,13 @@ namespace kres.Pages
             comboBox3.DisplayMember = "sinifadi";
             comboBox4.DataSource = c.siniflar.ToList();
             comboBox4.DisplayMember = "sinifadi";
+            update();
+
+
+        }
+        private void update()
+        {
+            dataGridView1.DataSource = c.DersProgrami.ToList();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -41,7 +48,7 @@ namespace kres.Pages
                 c.DersProgrami.Remove(dersprogrami);
                 c.SaveChanges();
                 MessageBox.Show("Silme işlemi başarılı");
-                dataGridView1.DataSource = c.DersProgrami.ToList();
+                update();
             }
 
 
@@ -71,6 +78,7 @@ namespace kres.Pages
             c.DersProgrami.Add(dersprogrami);
             c.SaveChanges();
             MessageBox.Show("Ekleme işlemi başarılı");
+            update();
 
         }
     }
