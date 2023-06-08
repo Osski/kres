@@ -59,5 +59,17 @@ namespace kres.Pages
             MessageBox.Show("Öğrenci Eklendi");
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            getveli();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var studentveli= new VeliEkle();
+            studentveli.Show();
+        }
     }
 }

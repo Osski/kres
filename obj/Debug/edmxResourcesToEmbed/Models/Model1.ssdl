@@ -11,6 +11,7 @@
     <Property Name="dogumtarihi" Type="date" />
     <Property Name="tcno" Type="int" />
     <Property Name="ogrencino" Type="int" />
+    <Property Name="durumu" Type="bit" />
   </EntityType>
   <EntityType Name="ogrencisinif">
     <Key>

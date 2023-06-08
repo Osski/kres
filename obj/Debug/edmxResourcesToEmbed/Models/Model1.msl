@@ -4,6 +4,7 @@
     <EntitySetMapping Name="ogrenci">
       <EntityTypeMapping TypeName="kresModel.ogrenci">
         <MappingFragment StoreEntitySet="ogrenci">
+          <ScalarProperty Name="durumu" ColumnName="durumu" />
           <ScalarProperty Name="ogrenciID" ColumnName="ogrenciID" />
           <ScalarProperty Name="adi" ColumnName="adi" />
           <ScalarProperty Name="soyadi" ColumnName="soyadi" />

@@ -118,11 +118,65 @@
     <Compile Include="Pages\OgrenciIslemleri.Designer.cs">
       <DependentUpon>OgrenciIslemleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OgretmenEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OgretmenEkle.Designer.cs">
+      <DependentUpon>OgretmenEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OgretmenGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OgretmenGuncelle.Designer.cs">
+      <DependentUpon>OgretmenGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OgretmenIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OgretmenIslemleri.Designer.cs">
+      <DependentUpon>OgretmenIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OgretmenSinif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OgretmenSinif.Designer.cs">
+      <DependentUpon>OgretmenSinif.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Panel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Panel.Designer.cs">
       <DependentUpon>Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SinifIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SinifIslemleri.Designer.cs">
+      <DependentUpon>SinifIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VeliCocuklari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\VeliCocuklari.Designer.cs">
+      <DependentUpon>VeliCocuklari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VeliEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\VeliEkle.Designer.cs">
+      <DependentUpon>VeliEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VeliGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\VeliGuncelle.Designer.cs">
+      <DependentUpon>VeliGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VeliYeniEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\VeliYeniEkle.Designer.cs">
+      <DependentUpon>VeliYeniEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,8 +192,35 @@
     <EmbeddedResource Include="Pages\OgrenciIslemleri.resx">
       <DependentUpon>OgrenciIslemleri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OgretmenEkle.resx">
+      <DependentUpon>OgretmenEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OgretmenGuncelle.resx">
+      <DependentUpon>OgretmenGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OgretmenIslemleri.resx">
+      <DependentUpon>OgretmenIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OgretmenSinif.resx">
+      <DependentUpon>OgretmenSinif.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SinifIslemleri.resx">
+      <DependentUpon>SinifIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\VeliCocuklari.resx">
+      <DependentUpon>VeliCocuklari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\VeliEkle.resx">
+      <DependentUpon>VeliEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\VeliGuncelle.resx">
+      <DependentUpon>VeliGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\VeliYeniEkle.resx">
+      <DependentUpon>VeliYeniEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

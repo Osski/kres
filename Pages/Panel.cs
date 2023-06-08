@@ -30,5 +30,17 @@ namespace kres.Pages
             var ogretmenislemleri = new Pages.OgretmenIslemleri();
             ogretmenislemleri.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var veliislemleri = new Pages.VeliEkle();
+            veliislemleri.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var sinif = new Pages.SinifIslemleri();
+            sinif.Show();
+        }
     }
 }

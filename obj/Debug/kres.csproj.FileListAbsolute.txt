@@ -18,3 +18,11 @@ C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.Panel.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgrenciIslemleri.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgrenciEkle.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgrenciGuncelle.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgretmenEkle.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgretmenGuncelle.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgretmenIslemleri.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.OgretmenSinif.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliEkle.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliCocuklari.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliGuncelle.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliYeniEkle.resources

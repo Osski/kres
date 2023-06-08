@@ -13,6 +13,7 @@
     <Property Name="ogrencino" Type="Int32" />
     <NavigationProperty Name="ogrencisinif" Relationship="Self.FK_ogrencisinif_ogrenci" FromRole="ogrenci" ToRole="ogrencisinif" />
     <NavigationProperty Name="ogrenciveli" Relationship="Self.FK_ogrenciveli_ogrenci" FromRole="ogrenci" ToRole="ogrenciveli" />
+    <Property Name="durumu" Type="Boolean" />
   </EntityType>
   <EntityType Name="ogrencisinif">
     <Key>
