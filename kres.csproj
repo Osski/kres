@@ -55,6 +55,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DersProgrami.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DersIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\DersIslemleri.Designer.cs">
+      <DependentUpon>DersIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DersProgrami.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\DersProgrami.Designer.cs">
+      <DependentUpon>DersProgrami.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +198,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pages\DersIslemleri.resx">
+      <DependentUpon>DersIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DersProgrami.resx">
+      <DependentUpon>DersProgrami.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +282,7 @@
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\Model1.edmx.sql" />
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

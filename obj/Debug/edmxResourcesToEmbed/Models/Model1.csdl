@@ -50,6 +50,7 @@
     <Property Name="cinsiyet" Type="Boolean" />
     <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
     <NavigationProperty Name="sinifogretmen" Relationship="Self.FK_sinifogretmen_ogretmen" FromRole="ogretmen" ToRole="sinifogretmen" />
+    <NavigationProperty Name="DersProgrami" Relationship="kresModel.FK_DersProgrami_ogretmen" FromRole="ogretmen" ToRole="DersProgrami" />
   </EntityType>
   <EntityType Name="siniflar">
     <Key>
@@ -59,6 +60,7 @@
     <Property Name="sinifadi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="ogrencisinif" Relationship="Self.FK_ogrencisinif_siniflar" FromRole="siniflar" ToRole="ogrencisinif" />
     <NavigationProperty Name="sinifogretmen" Relationship="Self.FK_sinifogretmen_siniflar" FromRole="siniflar" ToRole="sinifogretmen" />
+    <NavigationProperty Name="DersProgrami" Relationship="kresModel.FK_DersProgrami_siniflar" FromRole="siniflar" ToRole="DersProgrami" />
   </EntityType>
   <EntityType Name="sinifogretmen">
     <Key>
@@ -198,5 +200,78 @@
       <End Role="siniflar" EntitySet="siniflar" />
       <End Role="sinifogretmen" EntitySet="sinifogretmen" />
     </AssociationSet>
+    <EntitySet Name="ders" EntityType="kresModel.ders" />
+    <EntitySet Name="DersProgrami" EntityType="kresModel.DersProgrami" />
+    <AssociationSet Name="FK_DersProgrami_ders" Association="kresModel.FK_DersProgrami_ders">
+      <End Role="ders" EntitySet="ders" />
+      <End Role="DersProgrami" EntitySet="DersProgrami" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DersProgrami_ogretmen" Association="kresModel.FK_DersProgrami_ogretmen">
+      <End Role="ogretmen" EntitySet="ogretmen" />
+      <End Role="DersProgrami" EntitySet="DersProgrami" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DersProgrami_siniflar" Association="kresModel.FK_DersProgrami_siniflar">
+      <End Role="siniflar" EntitySet="siniflar" />
+      <End Role="DersProgrami" EntitySet="DersProgrami" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ders">
+    <Key>
+      <PropertyRef Name="DersID" />
+    </Key>
+    <Property Name="DersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DersProgrami" Relationship="kresModel.FK_DersProgrami_ders" FromRole="ders" ToRole="DersProgrami" />
+  </EntityType>
+  <EntityType Name="DersProgrami">
+    <Key>
+      <PropertyRef Name="DersProgramiID" />
+    </Key>
+    <Property Name="DersProgramiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DersID" Type="Int32" />
+    <Property Name="OgretmenID" Type="Int32" />
+    <Property Name="SinifID" Type="Int32" />
+    <Property Name="Gun" Type="DateTime" Precision="0" />
+    <Property Name="BaslangicSaat" Type="Time" Precision="7" />
+    <Property Name="BitisSaat" Type="Time" Precision="7" />
+    <NavigationProperty Name="ders" Relationship="kresModel.FK_DersProgrami_ders" FromRole="DersProgrami" ToRole="ders" />
+    <NavigationProperty Name="ogretmen" Relationship="kresModel.FK_DersProgrami_ogretmen" FromRole="DersProgrami" ToRole="ogretmen" />
+    <NavigationProperty Name="siniflar" Relationship="kresModel.FK_DersProgrami_siniflar" FromRole="DersProgrami" ToRole="siniflar" />
+  </EntityType>
+  <Association Name="FK_DersProgrami_ders">
+    <End Type="kresModel.ders" Role="ders" Multiplicity="0..1" />
+    <End Type="kresModel.DersProgrami" Role="DersProgrami" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ders">
+        <PropertyRef Name="DersID" />
+      </Principal>
+      <Dependent Role="DersProgrami">
+        <PropertyRef Name="DersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DersProgrami_ogretmen">
+    <End Type="kresModel.ogretmen" Role="ogretmen" Multiplicity="0..1" />
+    <End Type="kresModel.DersProgrami" Role="DersProgrami" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ogretmen">
+        <PropertyRef Name="ogretmenID" />
+      </Principal>
+      <Dependent Role="DersProgrami">
+        <PropertyRef Name="OgretmenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DersProgrami_siniflar">
+    <End Type="kresModel.siniflar" Role="siniflar" Multiplicity="0..1" />
+    <End Type="kresModel.DersProgrami" Role="DersProgrami" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="siniflar">
+        <PropertyRef Name="sinifID" />
+      </Principal>
+      <Dependent Role="DersProgrami">
+        <PropertyRef Name="SinifID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

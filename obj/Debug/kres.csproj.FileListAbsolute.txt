@@ -26,3 +26,6 @@ C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliEkle.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliCocuklari.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliGuncelle.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliYeniEkle.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.SinifIslemleri.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.DersIslemleri.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.DersProgrami.resources

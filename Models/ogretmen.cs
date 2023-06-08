@@ -18,6 +18,7 @@ namespace kres.Models
         public ogretmen()
         {
             this.sinifogretmen = new HashSet<sinifogretmen>();
+            this.DersProgrami = new HashSet<DersProgrami>();
         }
     
         public int ogretmenID { get; set; }
@@ -33,5 +34,7 @@ namespace kres.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sinifogretmen> sinifogretmen { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DersProgrami> DersProgrami { get; set; }
     }
 }

@@ -27,6 +27,15 @@ namespace kres.Pages
 
             comboBox2.DataSource = sinif.ToList();
             comboBox2.DisplayMember = "sinifadi";
+            var ogretmensinif = c.sinifogretmen.Select(x => new
+            {
+                x.sinifogretmenID,
+                x.ogretmen.adi,
+                x.ogretmen.soyadi,
+                x.siniflar.sinifadi
+            }).ToList();
+            dataGridView1.DataSource = ogretmensinif;
+            this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void button1_Click(object sender, EventArgs e)

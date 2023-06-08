@@ -42,5 +42,17 @@ namespace kres.Pages
             var sinif = new Pages.SinifIslemleri();
             sinif.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var DersIslemleri = new Pages.DersIslemleri();
+            DersIslemleri.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var dersprogrami = new Pages.DersProgrami();
+            dersprogrami.Show();
+        }
     }
 }

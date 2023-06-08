@@ -12,23 +12,17 @@ namespace kres.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class siniflar
+    public partial class ders
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public siniflar()
+        public ders()
         {
-            this.ogrencisinif = new HashSet<ogrencisinif>();
-            this.sinifogretmen = new HashSet<sinifogretmen>();
             this.DersProgrami = new HashSet<DersProgrami>();
         }
     
-        public int sinifID { get; set; }
-        public string sinifadi { get; set; }
+        public int DersID { get; set; }
+        public string DersAdi { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ogrencisinif> ogrencisinif { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sinifogretmen> sinifogretmen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DersProgrami> DersProgrami { get; set; }
     }

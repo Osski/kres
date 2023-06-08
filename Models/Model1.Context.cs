@@ -33,5 +33,7 @@ namespace kres.Models
         public virtual DbSet<sinifogretmen> sinifogretmen { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<veli> veli { get; set; }
+        public virtual DbSet<ders> ders { get; set; }
+        public virtual DbSet<DersProgrami> DersProgrami { get; set; }
     }
 }

@@ -19,6 +19,11 @@
         <AssociationConnector Association="kresModel.FK_ogrenciveli_veli" ManuallyRouted="false" />
         <AssociationConnector Association="kresModel.FK_sinifogretmen_ogretmen" ManuallyRouted="false" />
         <AssociationConnector Association="kresModel.FK_sinifogretmen_siniflar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="kresModel.ders" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="kresModel.DersProgrami" Width="1.5" PointX="7.375" PointY="5.75" />
+        <AssociationConnector Association="kresModel.FK_DersProgrami_ders" />
+        <AssociationConnector Association="kresModel.FK_DersProgrami_ogretmen" />
+        <AssociationConnector Association="kresModel.FK_DersProgrami_siniflar" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
