@@ -58,5 +58,20 @@ namespace kres.Pages
             var program = c.DersProgrami.Where(x => x.SinifID == dersprogramiselected.SinifID);
             dataGridView1.DataSource = program.ToList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var dersprogrami = new Models.DersProgrami();
+            dersprogrami.DersID = ((Models.ders)comboBox1.SelectedValue).DersID;
+            dersprogrami.OgretmenID = ((Models.ogretmen)comboBox2.SelectedValue).ogretmenID;
+            dersprogrami.SinifID = ((Models.siniflar)comboBox3.SelectedValue).sinifID;
+            dersprogrami.Gun = comboBox4.SelectedText;
+            dersprogrami.BaslangicSaat = dateTimePicker2.Value.TimeOfDay;
+            dersprogrami.BitisSaat = dateTimePicker3.Value.TimeOfDay;
+            c.DersProgrami.Add(dersprogrami);
+            c.SaveChanges();
+            MessageBox.Show("Ekleme işlemi başarılı");
+
+        }
     }
 }

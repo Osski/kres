@@ -35,6 +35,9 @@ namespace kres.Pages
                 x.siniflar.sinifadi
             }).ToList();
             dataGridView1.DataSource = ogretmensinif;
+            comboBox3.DataSource = ogretmensinif;
+            comboBox3.DisplayMember = "sinifogretmenID";
+            comboBox3.ValueMember = "sinifogretmenID";
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -50,6 +53,16 @@ namespace kres.Pages
             c.SaveChanges();
             MessageBox.Show("Öğretmen Sınıfa Atandı");
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var selectedTeacherID = comboBox3.SelectedValue;
+            var selected = Convert.ToInt32(selectedTeacherID);
+            var ogretmensinif = c.sinifogretmen.Where(x => x.sinifogretmenID == selected).FirstOrDefault();
+            c.sinifogretmen.Remove(ogretmensinif);
+            c.SaveChanges();
+            MessageBox.Show("Öğretmen Sınıftan Çıkartıldı");
         }
     }
 }

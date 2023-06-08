@@ -35,16 +35,33 @@ namespace kres.Pages
         {
             comboBox1.DataSource = c.siniflar.ToList();
             comboBox1.DisplayMember = "sinifadi";
-            dataGridView1.DataSource = c.siniflar.ToList();
+            var siniflar = c.siniflar.Select(x => new
+            {
+                x.sinifogretmen.Where(y=>y.sinifID==x.sinifID).FirstOrDefault().ogretmen.adi,
+                x.sinifadi,
+            }).ToList();
+            dataGridView1.DataSource = siniflar;
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var sinif = (siniflar)comboBox1.SelectedValue;
-            var sinifselected = c.siniflar.Find(sinif.sinifID);
-            c.siniflar.Remove(sinifselected);
-            c.SaveChanges();
+            
+            //try
+            //{
+                var sinif = (siniflar)comboBox1.SelectedValue;
+                var sinifselected = c.siniflar.Where(x => x.sinifID == sinif.sinifID).FirstOrDefault();
+                c.siniflar.Remove(sinifselected);
+                c.SaveChanges();
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("İlk Önce Bağlantıyı Çıkartın");
+                
+            //}
+            
+            update();
+            MessageBox.Show("Silme işlemi başarılı");
         }
     }
 }

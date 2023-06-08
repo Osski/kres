@@ -8,7 +8,7 @@
     <Property Name="adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="soyadi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="cinsiyet" Type="Boolean" />
-    <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
+    <Property Name="dogumtarihi" Type="DateTime" Precision="3" />
     <Property Name="tcno" Type="Int32" />
     <Property Name="ogrencino" Type="Int32" />
     <NavigationProperty Name="ogrencisinif" Relationship="Self.FK_ogrencisinif_ogrenci" FromRole="ogrenci" ToRole="ogrencisinif" />
@@ -48,7 +48,7 @@
     <Property Name="maas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="cinsiyet" Type="Boolean" />
-    <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
+    <Property Name="dogumtarihi" Type="DateTime" Precision="3" />
     <NavigationProperty Name="sinifogretmen" Relationship="Self.FK_sinifogretmen_ogretmen" FromRole="ogretmen" ToRole="sinifogretmen" />
     <NavigationProperty Name="DersProgrami" Relationship="kresModel.FK_DersProgrami_ogretmen" FromRole="ogretmen" ToRole="DersProgrami" />
   </EntityType>
@@ -231,7 +231,7 @@
     <Property Name="DersID" Type="Int32" />
     <Property Name="OgretmenID" Type="Int32" />
     <Property Name="SinifID" Type="Int32" />
-    <Property Name="Gun" Type="DateTime" Precision="0" />
+    <Property Name="Gun" Type="String" />
     <Property Name="BaslangicSaat" Type="Time" Precision="7" />
     <Property Name="BitisSaat" Type="Time" Precision="7" />
     <NavigationProperty Name="ders" Relationship="kresModel.FK_DersProgrami_ders" FromRole="DersProgrami" ToRole="ders" />

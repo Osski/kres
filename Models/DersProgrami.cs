@@ -18,7 +18,7 @@ namespace kres.Models
         public Nullable<int> DersID { get; set; }
         public Nullable<int> OgretmenID { get; set; }
         public Nullable<int> SinifID { get; set; }
-        public Nullable<System.DateTime> Gun { get; set; }
+        public string Gun { get; set; }
         public Nullable<System.TimeSpan> BaslangicSaat { get; set; }
         public Nullable<System.TimeSpan> BitisSaat { get; set; }
     
