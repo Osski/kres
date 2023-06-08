@@ -28,15 +28,25 @@ namespace kres.Pages
             comboBox2.DisplayMember = "tcno";
             comboBox3.DataSource = c.siniflar.ToList();
             comboBox3.DisplayMember = "sinifadi";
-            comboBox4.DataSource = c.siniflar.ToList();
-            comboBox4.DisplayMember = "sinifadi";
+            comboBox5.DataSource = c.siniflar.ToList();
+            comboBox5.DisplayMember = "sinifadi";
             update();
 
 
         }
         private void update()
         {
-            dataGridView1.DataSource = c.DersProgrami.ToList();
+            var dersprogrami = c.DersProgrami.Select(x => new
+            {
+                x.DersProgramiID,
+                x.siniflar.sinifadi,
+                x.ders.DersAdi,
+                x.ogretmen.adi,
+                x.Gun,
+                x.BaslangicSaat,
+                x.BitisSaat
+            });
+            dataGridView1.DataSource = dersprogrami.ToList();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -56,14 +66,14 @@ namespace kres.Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c.DersProgrami.ToList();
+            update();
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var dersprogramiselected = (Models.DersProgrami)comboBox4.SelectedValue;
-            var program = c.DersProgrami.Where(x => x.SinifID == dersprogramiselected.SinifID);
-            dataGridView1.DataSource = program.ToList();
+            //var dersprogramiselected = (Models.DersProgrami)comboBox5.SelectedValue;
+            //var program = c.DersProgrami.Where(x => x.SinifID == dersprogramiselected.SinifID);
+            //dataGridView1.DataSource = program.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,7 +82,7 @@ namespace kres.Pages
             dersprogrami.DersID = ((Models.ders)comboBox1.SelectedValue).DersID;
             dersprogrami.OgretmenID = ((Models.ogretmen)comboBox2.SelectedValue).ogretmenID;
             dersprogrami.SinifID = ((Models.siniflar)comboBox3.SelectedValue).sinifID;
-            dersprogrami.Gun = comboBox4.SelectedText;
+            dersprogrami.Gun =Convert.ToString(comboBox4.SelectedItem);
             dersprogrami.BaslangicSaat = dateTimePicker2.Value.TimeOfDay;
             dersprogrami.BitisSaat = dateTimePicker3.Value.TimeOfDay;
             c.DersProgrami.Add(dersprogrami);
