@@ -70,5 +70,10 @@ namespace kres.Pages
         {
             loaddatagridview();
         }
+
+        private void OgrenciIslemleri_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -214,6 +214,7 @@
       <End Role="siniflar" EntitySet="siniflar" />
       <End Role="DersProgrami" EntitySet="DersProgrami" />
     </AssociationSet>
+    <EntitySet Name="kullanici" EntityType="kresModel.kullanici" />
   </EntityContainer>
   <EntityType Name="ders">
     <Key>
@@ -231,7 +232,7 @@
     <Property Name="DersID" Type="Int32" />
     <Property Name="OgretmenID" Type="Int32" />
     <Property Name="SinifID" Type="Int32" />
-    <Property Name="Gun" Type="String" />
+    <Property Name="Gun" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="BaslangicSaat" Type="Time" Precision="7" />
     <Property Name="BitisSaat" Type="Time" Precision="7" />
     <NavigationProperty Name="ders" Relationship="kresModel.FK_DersProgrami_ders" FromRole="DersProgrami" ToRole="ders" />
@@ -274,4 +275,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullaniciID" />
+    </Key>
+    <Property Name="kullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="durum" Type="Boolean" />
+  </EntityType>
 </Schema>

@@ -35,5 +35,6 @@ namespace kres.Models
         public virtual DbSet<veli> veli { get; set; }
         public virtual DbSet<ders> ders { get; set; }
         public virtual DbSet<DersProgrami> DersProgrami { get; set; }
+        public virtual DbSet<kullanici> kullanici { get; set; }
     }
 }

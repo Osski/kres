@@ -29,3 +29,5 @@ C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.VeliYeniEkle.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.SinifIslemleri.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.DersIslemleri.resources
 C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.DersProgrami.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.Giris.resources
+C:\Users\osman\source\repos\kres\obj\Debug\kres.Pages.Ayarlar.resources

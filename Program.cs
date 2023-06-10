@@ -16,7 +16,7 @@ namespace kres
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new kres.Pages.Panel());
+            Application.Run(new kres.Pages.Giris());
         }
     }
 }

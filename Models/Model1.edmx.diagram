@@ -24,6 +24,7 @@
         <AssociationConnector Association="kresModel.FK_DersProgrami_ders" />
         <AssociationConnector Association="kresModel.FK_DersProgrami_ogretmen" />
         <AssociationConnector Association="kresModel.FK_DersProgrami_siniflar" />
+        <EntityTypeShape EntityType="kresModel.kullanici" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -96,6 +96,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "OgrenciIslemleri";
             this.Text = "OgrenciIslemleri";
+            this.Load += new System.EventHandler(this.OgrenciIslemleri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

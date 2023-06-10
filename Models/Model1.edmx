@@ -105,6 +105,15 @@
           <Property Name="adres" Type="nvarchar(max)" />
           <Property Name="tel" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="kullanici">
+          <Key>
+            <PropertyRef Name="kullaniciID" />
+          </Key>
+          <Property Name="kullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="durum" Type="bit" />
+        </EntityType>
         <Association Name="FK_DersProgrami_ders">
           <End Role="ders" Type="Self.ders" Multiplicity="0..1" />
           <End Role="DersProgrami" Type="Self.DersProgrami" Multiplicity="*" />
@@ -224,6 +233,7 @@
           <EntitySet Name="sinifogretmen" EntityType="Self.sinifogretmen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="veli" EntityType="Self.veli" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="osmanakcomtr" store:Type="Tables" />
           <AssociationSet Name="FK_DersProgrami_ders" Association="Self.FK_DersProgrami_ders">
             <End Role="ders" EntitySet="ders" />
             <End Role="DersProgrami" EntitySet="DersProgrami" />
@@ -479,6 +489,7 @@
             <End Role="siniflar" EntitySet="siniflar" />
             <End Role="DersProgrami" EntitySet="DersProgrami" />
           </AssociationSet>
+          <EntitySet Name="kullanici" EntityType="kresModel.kullanici" />
         </EntityContainer>
         <EntityType Name="ders">
           <Key>
@@ -496,7 +507,7 @@
           <Property Name="DersID" Type="Int32" />
           <Property Name="OgretmenID" Type="Int32" />
           <Property Name="SinifID" Type="Int32" />
-          <Property Name="Gun" Type="String" />
+          <Property Name="Gun" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="BaslangicSaat" Type="Time" Precision="7" />
           <Property Name="BitisSaat" Type="Time" Precision="7" />
           <NavigationProperty Name="ders" Relationship="kresModel.FK_DersProgrami_ders" FromRole="DersProgrami" ToRole="ders" />
@@ -539,6 +550,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="kullanici">
+          <Key>
+            <PropertyRef Name="kullaniciID" />
+          </Key>
+          <Property Name="kullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="durum" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -655,6 +675,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+          <EntitySetMapping Name="kullanici">
+            <EntityTypeMapping TypeName="kresModel.kullanici">
+              <MappingFragment StoreEntitySet="kullanici">
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

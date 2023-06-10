@@ -100,6 +100,15 @@
     <Property Name="adres" Type="nvarchar(max)" />
     <Property Name="tel" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullaniciID" />
+    </Key>
+    <Property Name="kullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="durum" Type="bit" />
+  </EntityType>
   <Association Name="FK_DersProgrami_ders">
     <End Role="ders" Type="Self.ders" Multiplicity="0..1" />
     <End Role="DersProgrami" Type="Self.DersProgrami" Multiplicity="*" />
@@ -219,6 +228,7 @@
     <EntitySet Name="sinifogretmen" EntityType="Self.sinifogretmen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="veli" EntityType="Self.veli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="osmanakcomtr" store:Type="Tables" />
     <AssociationSet Name="FK_DersProgrami_ders" Association="Self.FK_DersProgrami_ders">
       <End Role="ders" EntitySet="ders" />
       <End Role="DersProgrami" EntitySet="DersProgrami" />

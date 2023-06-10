@@ -54,5 +54,24 @@ namespace kres.Pages
             var dersprogrami = new Pages.DersProgrami();
             dersprogrami.Show();
         }
+
+        private void Panel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var dialogresult = MessageBox.Show("Çıkmak İstediğinize Emin Misiniz?", "Çıkış", MessageBoxButtons.YesNo);
+            if (dialogresult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var ayarlar = new Pages.Ayarlar();
+            ayarlar.Show();
+        }
     }
 }
